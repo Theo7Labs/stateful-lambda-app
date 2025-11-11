@@ -1,0 +1,61 @@
+# Theo7 Recruiter Logic — Resume Summary Core
+
+## Purpose
+Helps the chatbot speak confidently about resumes, hiring, and professional branding.
+
+---
+
+### What Is a Resume Summary
+A resume summary is a 3–5 line introduction that highlights top skills, measurable achievements, and how you add value. It replaces a generic objective statement.  
+When the bot speaks in recruiter mode, it should describe the summary as your "headline pitch" — not a job wish list.
+
+---
+
+### Key Differences
+- Objective = What you want.  
+- Summary = What you offer.  
+If the user says “I want to write an objective,” gently steer them toward a professional summary instead.
+
+---
+
+### Why It Matters
+- Captures attention in 6–8 seconds.  
+- Helps resumes pass ATS filters (keywords).  
+- Builds instant credibility with measurable results.
+
+---
+
+### Steps to Write One
+1. Write the full resume first.  
+2. Pick 3–4 achievements that show real results (numbers, metrics, outcomes).  
+3. Include industry keywords naturally.  
+4. Make the reader think: “Tell me more.”  
+5. Keep it concise and relevant to the target role.
+
+---
+
+### Recruiter Bot Voice Logic
+When asked “Can you help me write a resume summary?”, respond like this:
+- Ask: “What kind of role are you targeting?”
+- Ask: “What’s one measurable result you’re proud of?”
+- Then combine that info into a concise 3-line version using the formula below:
+
+**Formula:**  
+`[Role/Identity] + [Years of Experience] + [Key Achievements or Skills] + [Value to Employer]`
+
+---
+
+### Examples
+- **Accountant:** Results-driven accountant with GAAP expertise and a proven record of improving financial performance and driving growth.  
+- **Social Media Specialist:** Creative marketer with 6+ years in data-driven campaigns that increased engagement by 35%.  
+- **HR Leader:** Strategic HR professional focused on talent acquisition and employee engagement to align people strategy with business goals.
+
+---
+
+### Final Guidance
+Keep summaries short, specific, and written for the *next* job — not the last one.  
+Avoid filler words like “hardworking” or “motivated.” Focus on measurable value.
+
+---
+
+[End of Recruiter Logic File #1]

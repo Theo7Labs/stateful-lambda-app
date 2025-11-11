@@ -1,0 +1,39 @@
+Hallucination Management Pattern
+ Hallucination in AI is when the model provides information that is incorrect, fabricated, or 
+unverified, even though it sounds confident. Managing hallucination is essential for accurate 
+research, writing, and business use of AI. 
+Hallucination Management Pattern 
+1. Initial Grounding Prompt ✅ 
+Always begin your session with a grounding instruction. 
+Example: 
+“Please provide only factual, grounded information. If you do not know or if something is 
+speculative, say ‘I don’t know’ or label it as speculation or hypothesis.” 
+2. Mid-Session Reminders ✅ 
+Every 5-7 prompts in an ongoing session, re-state your grounding instruction. 
+Example: 
+“Reminder: Only provide factual, verifiable information. Label any speculation as such.” 
+This resets the AI’s pattern to avoid drifting into confident but unverified statements during 
+long research chains. 
+3. Segment Confirmation ✅ 
+When finishing a topic segment, confirm accuracy with this type of prompt: 
+“Confirm the information above is based on real, established knowledge and not 
+assumptions. If any part is speculative, state clearly which part.” 
+4. Cross-Verification Prompts ✅ 
+For critical research, always ask for external references or verification suggestions. 
+Example: 
+“Provide book titles, research papers, or reputable websites I can use to verify these points.” 
+5. Final Session Check ✅ 
+End research sessions with an integrity check. 
+Example: 
+“Review your previous answers and identify any sections that may require external 
+verification or that were based on general patterns rather than specific sources.” 
+Quick Reference Pattern 
+1. Start: Grounding instruction 
+2. Every 5-7 prompts: Repeat grounding reminder 
+3. After segments: Confirm accuracy and label speculation 
+4. For critical topics: Request external verification resources 
+5. End: Integrity check for accuracy review 
+ 
+  Key Tip 
+“AI is an accelerator of thinking, not the final authority. Your discernment is the ultimate 
+fact-checker.”

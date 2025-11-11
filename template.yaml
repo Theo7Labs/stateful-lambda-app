@@ -1,0 +1,54 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  theo7_live_agent
+  
+  This template deploys a stateful visit counter.
+
+Globals:
+  Function:
+    Timeout: 10 # Set timeout to 10 seconds
+
+Resources:
+  # This is the Lambda function (the "worker")
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: hello_world/
+      Handler: app.lambda_handler
+      Runtime: python3.11
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          # This line "glues" the function to the table
+          STATE_TABLE_NAME: !Ref VisitCounterTable
+      Policies:
+        # This policy gives the function permission to read/write to the table
+        - DynamoDBCrudPolicy:
+            TableName: !Ref VisitCounterTable
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+
+  # This is the new DynamoDB table (the "memory")
+  VisitCounterTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+        Name: session_id
+        Type: String
+
+Outputs:
+  HelloWorldApi:
+    Description: "API Gateway endpoint URL for Prod stage for Visit Counter function"
+    #
+    # THIS IS THE 100% CORRECT, FIXED LINE
+    #
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello"
+  HelloWorldFunction:
+    Description: "Visit Counter Lambda Function ARN"
+    Value: !GetAtt HelloWorldFunction.Arn
