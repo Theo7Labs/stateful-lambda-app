@@ -4,7 +4,7 @@ This project is a fully functional, stateful serverless application deployed on 
 
 The application functions as a Visit Counter that correctly retrieves a user's session from the database, increments the count, and saves the new state before responding.
 
-Video Walkthrough (Recommended for Recruiters): Watch the Full Debugging Story on YouTube https://youtu.be/v0oDWnETL78
+Video Walkthrough https://youtu.be/hIfFeBYaHMk   and  Watch the Full Debugging Story on YouTube https://youtu.be/v0oDWnETL78
 
 Final API URL Proof: [Paste Your Live API URL Here] (e.g., Refreshing this URL proves state is maintained.)
 
