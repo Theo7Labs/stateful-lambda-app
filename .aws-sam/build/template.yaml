@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'theo7_live_agent
+
+  This template deploys a stateful visit counter.
+
+  '
+Globals:
+  Function:
+    Timeout: 10
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: HelloWorldFunction
+      Handler: app.lambda_handler
+      Runtime: python3.11
+      Architectures:
+      - x86_64
+      Environment:
+        Variables:
+          STATE_TABLE_NAME:
+            Ref: VisitCounterTable
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: VisitCounterTable
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+    Metadata:
+      SamResourceId: HelloWorldFunction
+  VisitCounterTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+        Name: session_id
+        Type: String
+Outputs:
+  HelloWorldApi:
+    Description: API Gateway endpoint URL for Prod stage for Visit Counter function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello
+  HelloWorldFunction:
+    Description: Visit Counter Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - HelloWorldFunction
+      - Arn
